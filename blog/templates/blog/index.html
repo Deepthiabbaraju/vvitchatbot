@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+
+    
+    </head>
+    <body>
+        <h1>Chatbot</h1>
+    <div>
+        <div id=""chatbot">
+            <p class="botText"> <span>hi there</span></p>
+        </div>
+        <div id=""userInput">
+            <input type="text" id="textInput" name="userMessage" placeholder="Type your message..."/>
+            <input type="submit" value="Send" id="buttonInput"/>
+
+        </div>
+    </div>
+    <script>
+        function getUserResponse(){
+           var userText=$('#textInput').val();
+           var userHTML = "<p class='userText'>User: <span>"+userText+"</span/></p>";
+           $('#textInput').val("");
+           $('chatbot').append(userHTML);
+        }
+
+        $('#buttonInput').click(function(){
+            getUserResponse();
+        })
+    </script>
+
+    </body>
+</html> 
